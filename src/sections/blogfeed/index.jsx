@@ -9,16 +9,16 @@ import { LinkBox, LinkOverlay } from "@chakra-ui/react"
 
 import './styles.css'
 
-const BlogFeed = ({ blogs = [], title }) => {
+const BlogFeed = ({ blogs = [], Title }) => {
   return (
     <Container as="section" className="BlogFeed" mx="auto" maxWidth="1280px" p={6} minHeight="70vh">
-      <Heading as="h1" mt="4" mb="6">{title || 'Starter Kit blog'}</Heading>
+      <Heading as="h1" mt="4" mb="6">{Title || 'Starter Kit blog'}</Heading>
       <Flex direction={{ base: 'column' }}>
         {blogs.map((blog, index) => (
           <Flex as="article" className="BlogFeed-post" key={index} py="6" px="4" direction="column">
-            <Text><time>{blog.date}</time> - by {blog.author}</Text>
+            <Text><time>{blog.Date}</time> - by {blog.Author}</Text>
             <Heading className="BlogFeed-postTitle" mb="2"><Link href={`/blog/${slugify(blog.name)}`}>{blog.name}</Link></Heading>
-            <ResponsiveImage className="BlogFeed-postImage" src={blog.hero.src} alt="" />
+            <ResponsiveImage className="BlogFeed-postImage" src={blog.Hero.src} alt="" />
           </Flex>
         ))}
       </Flex>
